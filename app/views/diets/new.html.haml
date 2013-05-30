@@ -17,10 +17,10 @@
 
   .control-group
     .controls.offset1.span2
-      = image_tag('', id: 'preview_diet_photo', alt: '')
+      %img(src='' id='preview_diet_photo')
 
   .control-group
-    .controls
+    .controls.span4
       = f.submit "Log", class: "btn btn-primary"
       = link_to "Cancel", diets_path, class: "btn btn-primary"
 
