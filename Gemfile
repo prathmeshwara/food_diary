@@ -20,6 +20,8 @@ gem "devise", "~> 2.2.4"
 
 gem "omniauth", "~> 1.1.4"
 gem "omniauth-twitter", "~> 0.0.16"
+gem "paperclip", "~> 3.4.2"
+gem "aws-sdk", "~> 1.11.0"
 
 group :development do
   gem 'sqlite3'

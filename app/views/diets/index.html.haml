@@ -1,0 +1,36 @@
+- if @diets.size > 0
+  .row
+    .span2.offset1
+      = link_to "Log a Diet", new_diet_path, class: "btn"
+    .span2.offset2.pull-right
+      = link_to "Delete All", delete_all_diets_path, class: "btn", method: :delete, confirm: "Are you sure?"
+
+    %br/
+    %br/
+
+    .span12.offset1
+      %table.table.table-condensed.table-bordered.table-hover.table-striped.pull-right(id='dietsTable')
+        %thead
+          %tr
+            %th Name
+            %th Description
+            %th Date
+            %th
+              \&nbsp;
+
+        %tbody
+          - @diets.each do |diet|
+            %tr
+              %td= link_to(diet.name, diet)
+              %td= diet.description
+              %td= diet_logged_at(diet)
+              %td<
+                = link_to(diet, method: :delete, confirm: "Are you sure?") do
+                  %i.icon-remove
+
+      = render partial: 'shared/pagination', locals: { paginatable: @diets }
+
+- else
+  %h4 No diets logged! Start logging now.
+  %br/
+  = render file: "diets/new"

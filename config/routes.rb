@@ -12,7 +12,11 @@ FoodDiary::Application.routes.draw do
 
   match "/home" => "users#index", as: :user_home
 
-
+  resources :diets do
+    collection do
+      delete :destroy_all, as: :delete_all
+    end
+  end
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

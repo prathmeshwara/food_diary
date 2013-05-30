@@ -1,0 +1,25 @@
+- if @diet.present?
+  .row
+    .span4.offset1
+      %table.table.pull-left
+        %tbody
+          %tr
+            %td Name
+            %td= @diet.name
+
+          %tr
+            %td Description
+            %td= @diet.description
+
+          %tr
+            %td Photo
+            %td= image_tag @diet.photo.url(:medium)
+
+          %tr
+            %td Logged at
+            %td= diet_logged_at(@diet)
+  .row
+    .span4.offset1
+      = link_to('All Diets', diets_path, class: 'btn btn-link')
+      = link_to('Delete', @diet, class: 'btn btn-link', method: :delete, confirm: "Are you sure?")
+      = link_to('Add More', new_diet_path, class: 'btn btn-link')

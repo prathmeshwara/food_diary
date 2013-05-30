@@ -37,6 +37,7 @@ class User < ActiveRecord::Base
 
   has_one :personal_information, dependent: :delete
   has_many :authentications, dependent: :delete_all
+  has_many :diets, dependent: :delete_all, foreign_key: 'logger_id'
 
   def apply_omniauth(omniauth)
     user_info_hash = omniauth[:user_info]

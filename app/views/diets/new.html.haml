@@ -1,0 +1,26 @@
+- diet = @diet || Diet.new
+= form_for(diet, html: { class: 'form-horizontal', id: 'logDietForm' }) do |f|
+  .control-group
+    = f.label :name, class: 'control-label'
+    .controls
+      = f.text_field :name
+
+  .control-group
+    = f.label :description, class: 'control-label'
+    .controls
+      = f.text_field :description
+
+  .control-group
+    = f.label :photo, class: 'control-label'
+    .controls
+      = f.file_field :photo
+
+  .control-group
+    .controls.offset1.span2
+      = image_tag('', id: 'preview_diet_photo', alt: '')
+
+  .control-group
+    .controls
+      = f.submit "Log", class: "btn btn-primary"
+      = link_to "Cancel", diets_path, class: "btn btn-primary"
+

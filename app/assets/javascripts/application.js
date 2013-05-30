@@ -14,4 +14,5 @@
 //= require jquery_ujs
 //= require bootstrap
 //= require bootstrap-datepicker
+//= require food_diary
 //= require_tree .

@@ -36,4 +36,14 @@ FoodDiary::Application.configure do
   config.assets.debug = true
 
   config.action_mailer.default_url_options = { host: Settings.default_host }
+
+  # Reference:
+  # 1) https://devcenter.heroku.com/articles/paperclip-s3
+  # 2) https://github.com/thoughtbot/paperclip#readme --> Section: "Defaults"
+  config.paperclip_defaults = {
+    storage: :filesystem,
+    path: Settings.paperclip.storage.filesystem.path,
+    url: Settings.paperclip.storage.filesystem.url
+  }
+
 end

@@ -66,4 +66,15 @@ FoodDiary::Application.configure do
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
 
   config.action_mailer.default_url_options = { host: Settings.default_host }
+
+  # References:
+  # 1) https://devcenter.heroku.com/articles/paperclip-s3
+  # 2) http://stackoverflow.com/questions/2562249/how-can-i-set-paperclips-storage-mechanism-based-on-the-current-rails-environme
+  config.paperclip_defaults = {
+    storage: :s3,
+    s3_credentials: Settings.paperclip.storage.aws.s3_credentials.to_hash,
+    path: Settings.paperclip.storage.aws.path,
+    url: Settings.paperclip.storage.aws.url
+  }
+
 end

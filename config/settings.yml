@@ -8,3 +8,23 @@ omniauth:
     key: <%= ENV['TWITTER_KEY'] %>
     secret: <%= ENV['TWITTER_SECRET'] %>
 
+photos:
+  diet:
+    styles:
+      medium: "250x150"
+      thumb: "450x350"
+    default_image_path: "/assets/diet-default-picture.jpeg"
+
+paperclip:
+  storage:
+    aws:
+      path: ":attachment/:id/:style/:filename"
+      url: ":attachment/:id/:style/:filename"
+      s3_credentials:
+        bucket: <%= ENV['AWS_BUCKET'] %>
+        access_key_id: <%= ENV['AWS_ACCESS_KEY_ID'] %>
+        use_ssl: false
+        secret_access_key: <%= ENV['AWS_SECRET_ACCESS_KEY'] %>
+    filesystem:
+      path: ":rails_root/public/system/attachment/:id/:style/:filename"
+      url: "/system/attachment/:id/:style/:filename"
