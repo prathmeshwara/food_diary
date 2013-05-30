@@ -2,3 +2,9 @@ app_name: "Diary"
 
 default_host: <%= ENV['DEFAULT_HOST'] %>
 
+# Omniauth authentication settings.Third party application's key and secret.
+omniauth:
+  twitter:
+    key: <%= ENV['TWITTER_KEY'] %>
+    secret: <%= ENV['TWITTER_SECRET'] %>
+

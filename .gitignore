@@ -15,9 +15,11 @@
 /tmp
 
 /config/database.yml
+/config/settings/secured_*.yml
+
 /public/tmp/**/*
 /public/system/attachment/**/*
 
-
 /.project
-/..sass-cache/**/*
+/.sass-cache/**/*
+

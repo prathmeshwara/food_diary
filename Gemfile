@@ -18,6 +18,9 @@ gem "haml-rails", ">= 0.3.4"
 gem "kaminari", "~> 0.14.1"
 gem "devise", "~> 2.2.4"
 
+gem "omniauth", "~> 1.1.4"
+gem "omniauth-twitter", "~> 0.0.16"
+
 group :development do
   gem 'sqlite3'
   gem 'mysql2', '~> 0.3.11'

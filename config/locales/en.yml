@@ -3,3 +3,13 @@
 
 en:
   hello: "Hello world"
+
+  omniauth:
+    notices:
+      disconnect: "Successfully disconnected %{user_name} from %{provider}"
+
+    errors:
+      user_friendly_message: "Sorry, could not sign-in you to the system due to some technical problem."
+      account_associated_with_another_user: "Sorry could not connect you because the %{provider} account is already associated with other user."
+      already_connected: "You have already connected to %{provider} account. If you would like to change account, you'll need to disconnect earlier %{provider} account first."
+
