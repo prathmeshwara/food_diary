@@ -1,0 +1,14 @@
+- unless flash.empty?
+  .row
+    %br/
+    - flash.each do |name, message|
+      - css_class = ''
+      - case name
+        - when :error
+          - css_class = 'alert-error'
+        - when :notice
+          - css_class = 'alert-success'
+
+      %div{ class: "offset1 alert #{css_class}" }
+        %button.close{"data-dismiss" => "alert", :type => "button"} &times;
+        = message

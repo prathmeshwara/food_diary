@@ -1,0 +1,6 @@
+<% settings_file_path = Rails.root.to_s + "/config/settings.yml" %>
+<%= ERB.new(IO.read(settings_file_path)).result %>
+
+
+
+

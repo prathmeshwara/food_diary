@@ -1,0 +1,4 @@
+app_name: "Diary"
+
+default_host: <%= ENV['DEFAULT_HOST'] %>
+

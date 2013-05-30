@@ -1,0 +1,5 @@
+- unless local_assigns[:paginatable].nil?
+  .row
+    .span5.offset7
+      .pagination.pagination-mini.pull-right
+        = paginate(paginatable)

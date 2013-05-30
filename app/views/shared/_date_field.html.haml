@@ -1,0 +1,15 @@
+- date_field_name = 'date_field' unless local_assigns[:date_field_name].present?
+- date_field_val = nil unless local_assigns[:date_field_val].present?
+- unless local_assigns[:date_field_id].present?
+  - random_number = rand(77..87)
+  - date_field_id = "date_field_#{random_number}"
+
+-# Note: :"data-date" => "12-02-2012" attribute with a default value as per the
+-# date format is required.Without this datepicker will not be rendered and there
+-# will be an error in the Firebug console(if using) saying "TypeError: date is undefined"
+.input-append.date.datepicker{ id: date_field_id, :"data-date" => "12-02-2012", :"data-date-format" => "dd-mm-yyyy" }
+  -# Note: id attribute value of this date field and its parent container should not be same
+  -# else wierd behavior might be encountered in terms of datepicker rendering.
+  = text_field_tag(date_field_name, date_field_val, readonly: 'readonly', class: 'span2', id: '')
+  %span.add-on
+    %i.icon-calendar
